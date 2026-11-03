@@ -1,24 +1,246 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Localización</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/contacto">Contacto</a></li>
-                <li><a href="/localizacion">Localizacion</a></li>
-            </ul>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Localización | Web Development Academy</title>
+
+    <meta
+      name="description"
+      content="Encuentra Web Development Academy y consulta nuestra información de localización."
+    />
+
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container navbar">
+        <a href="/" class="logo">
+          <span class="logo-icon">&lt;/&gt;</span>
+          <span>Web<span class="logo-highlight">Academy</span></span>
+        </a>
+
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/#about">Nosotros</a></li>
+            <li><a href="/#courses">Cursos</a></li>
+            <li><a href="/#services">Servicios</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+            <li><a href="/localizacion" class="active">Localización</a></li>
+          </ul>
         </nav>
+
+        <a href="/contacto" class="btn btn-small">Contáctanos</a>
+      </div>
     </header>
+
     <main>
-        <h1>Localización</h1>
-        <p>Información sobre la localización.</p>
+      <!-- LOCATION HERO -->
+      <section class="location-hero">
+        <div class="container">
+          <span>ENCUÉNTRANOS</span>
+
+          <h1>Estamos más cerca de lo que <strong>imaginas</strong></h1>
+
+          <p>
+            Descubre nuestra ubicación y encuentra toda la información que
+            necesitas para contactar con Web Development Academy.
+          </p>
+
+          <a href="#location-details" class="btn btn-light">
+            Ver ubicación ↓
+          </a>
+        </div>
+      </section>
+
+      <!-- LOCATION DETAILS -->
+      <section class="section location-section" id="location-details">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-label">NUESTRA LOCALIZACIÓN</span>
+
+            <h2>¿Dónde estamos?</h2>
+
+            <p>
+              Consulta nuestros datos de ubicación y ponte en contacto con
+              nosotros.
+            </p>
+          </div>
+
+          <div class="location-grid">
+            <!-- LOCATION INFORMATION -->
+            <div class="location-details">
+              <div class="location-detail-card">
+                <div class="location-icon">📍</div>
+
+                <div>
+                  <h3>Dirección</h3>
+                  <p>Dirección pendiente de añadir</p>
+                </div>
+              </div>
+
+              <div class="location-detail-card">
+                <div class="location-icon">✉️</div>
+
+                <div>
+                  <h3>Correo electrónico</h3>
+                  <p>info@example.com</p>
+                </div>
+              </div>
+
+              <div class="location-detail-card">
+                <div class="location-icon">🌐</div>
+
+                <div>
+                  <h3>Website</h3>
+                  <p>Web Development Academy</p>
+                </div>
+              </div>
+
+              <div class="location-detail-card">
+                <div class="location-icon">💬</div>
+
+                <div>
+                  <h3>Información</h3>
+                  <p>
+                    Para cualquier consulta, visita nuestra página de contacto.
+                  </p>
+                </div>
+              </div>
+
+              <a href="/contacto" class="btn location-contact-btn">
+                Contactar con nosotros →
+              </a>
+            </div>
+
+            <!-- MAP -->
+            <div class="location-map">
+              <div class="map-placeholder">
+                <span class="map-pin">📍</span>
+
+                <h3>Nuestra ubicación</h3>
+
+                <p>Aquí aparecerá el mapa de Web Development Academy.</p>
+
+                <span class="map-label"> MAPA PENDIENTE DE CONFIGURAR </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DIRECTIONS -->
+      <section class="section directions-section">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-label">CÓMO CONTACTAR</span>
+
+            <h2>Estamos aquí para ayudarte</h2>
+
+            <p>
+              Puedes acceder a nuestra información y enviarnos cualquier
+              pregunta.
+            </p>
+          </div>
+
+          <div class="directions-grid">
+            <div class="direction-card">
+              <span>📧</span>
+
+              <h3>Escríbenos</h3>
+
+              <p>Envíanos un mensaje para obtener más información.</p>
+
+              <a href="/contacto">Ir a contacto →</a>
+            </div>
+
+            <div class="direction-card">
+              <span>💻</span>
+
+              <h3>Conoce nuestros cursos</h3>
+
+              <p>Descubre las tecnologías y cursos de desarrollo web.</p>
+
+              <a href="/#courses">Ver cursos →</a>
+            </div>
+
+            <div class="direction-card">
+              <span>ℹ️</span>
+
+              <h3>Más información</h3>
+
+              <p>Conoce más sobre nuestra academia y nuestros servicios.</p>
+
+              <a href="/#about">Sobre nosotros →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="location-cta">
+        <div class="container location-cta-content">
+          <div>
+            <span>¿TIENES ALGUNA DUDA?</span>
+
+            <h2>Estaremos encantados de ayudarte.</h2>
+
+            <p>
+              Ponte en contacto con nosotros y descubre más sobre Web
+              Development Academy.
+            </p>
+          </div>
+
+          <a href="/contacto" class="btn btn-light"> Enviar consulta → </a>
+        </div>
+      </section>
     </main>
-</body>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-about">
+          <a href="/" class="logo footer-logo">
+            <span class="logo-icon">&lt;/&gt;</span>
+            <span>Web<span class="logo-highlight">Academy</span></span>
+          </a>
+
+          <p>
+            Learn. Create. Grow. Construye tus habilidades y crea tu futuro
+            digital.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Navegación</h3>
+          <a href="/">Inicio</a>
+          <a href="/#about">Nosotros</a>
+          <a href="/#courses">Cursos</a>
+          <a href="/contacto">Contacto</a>
+        </div>
+
+        <div class="footer-links">
+          <h3>Información</h3>
+          <a href="/#services">Servicios</a>
+          <a href="/localizacion">Localización</a>
+        </div>
+
+        <div class="footer-links">
+          <h3>Contacto</h3>
+          <p>¿Quieres aprender desarrollo web?</p>
+          <a href="/contacto">Escríbenos →</a>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© 2026 Web Development Academy. Todos los derechos reservados.</p>
+
+        <a href="/">Learn. Create. Grow.</a>
+      </div>
+    </footer>
+  </body>
 </html>

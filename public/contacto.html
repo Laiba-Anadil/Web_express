@@ -1,24 +1,305 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
-    <link rel="stylesheet" href="css/style.css">
+
+    <title>Contacto | Web Development Academy</title>
+
+    <meta name="description" content="Contacta con Web Development Academy para obtener más información sobre nuestros cursos de desarrollo web.">
+
+    <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/contacto">Contacto</a></li>
-                <li><a href="/localizacion">Localizacion</a></li>
-            </ul>
-        </nav>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container navbar">
+
+            <a href="/" class="logo">
+                <span class="logo-icon">&lt;/&gt;</span>
+                <span>Web<span class="logo-highlight">Academy</span></span>
+            </a>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/#about">Nosotros</a></li>
+                    <li><a href="/#courses">Cursos</a></li>
+                    <li><a href="/#services">Servicios</a></li>
+                    <li><a href="/contacto" class="active">Contacto</a></li>
+                    <li><a href="/localizacion">Localización</a></li>
+                </ul>
+            </nav>
+
+            <a href="/#courses" class="btn btn-small">Explorar cursos</a>
+
+        </div>
     </header>
+
+
     <main>
-        <h1>Contacto</h1>
-        <p>Información de contacto.</p>
+
+        <!-- CONTACT HERO -->
+        <section class="contact-hero">
+            <div class="container">
+
+                <span>ESTAMOS AQUÍ PARA AYUDARTE</span>
+
+                <h1>Hablemos de tu <strong>futuro digital</strong></h1>
+
+                <p>
+                    ¿Tienes preguntas sobre nuestros cursos o quieres
+                    conocer más sobre el desarrollo web? Escríbenos.
+                </p>
+
+                <a href="#contact-form" class="btn btn-light">
+                    Enviar un mensaje ↓
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- CONTACT INFORMATION -->
+        <section class="section contact-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">CONTACTA CON NOSOTROS</span>
+
+                    <h2>¿Cómo podemos ayudarte?</h2>
+
+                    <p>
+                        Estamos encantados de resolver tus dudas
+                        y ofrecerte más información.
+                    </p>
+                </div>
+
+
+                <div class="contact-info-grid">
+
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">✉️</div>
+                        <h3>Correo electrónico</h3>
+                        <p>Envíanos tus consultas.</p>
+                        <a href="mailto:info@example.com">
+                            info@example.com
+                        </a>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">📍</div>
+                        <h3>Localización</h3>
+                        <p>Descubre dónde encontrarnos.</p>
+                        <a href="/localizacion">
+                            Ver ubicación →
+                        </a>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">💬</div>
+                        <h3>Atención al cliente</h3>
+                        <p>Estamos aquí para responder tus preguntas.</p>
+                        <a href="#contact-form">
+                            Enviar consulta →
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <!-- CONTACT FORM -->
+                <div class="contact-form-wrapper" id="contact-form">
+
+                    <div class="contact-form-text">
+
+                        <span class="section-label">ENVÍANOS UN MENSAJE</span>
+
+                        <h2>Nos gustaría saber de ti</h2>
+
+                        <p>
+                            Completa el formulario y cuéntanos
+                            qué necesitas. Te responderemos lo antes posible.
+                        </p>
+
+                        <div class="contact-note">
+                            <span>✓</span>
+                            Información clara y sencilla.
+                        </div>
+
+                        <div class="contact-note">
+                            <span>✓</span>
+                            Atención a tus consultas.
+                        </div>
+
+                        <div class="contact-note">
+                            <span>✓</span>
+                            Información sobre nuestros cursos.
+                        </div>
+
+                    </div>
+
+
+                    <form class="contact-form" action="#" method="POST">
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+                                <label for="name">Nombre completo</label>
+
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Tu nombre"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Correo electrónico</label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="tu@email.com"
+                                    required
+                                >
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="subject">Asunto</label>
+
+                            <input
+                                type="text"
+                                id="subject"
+                                name="subject"
+                                placeholder="¿Sobre qué quieres consultar?"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="6"
+                                placeholder="Escribe tu mensaje aquí..."
+                                required
+                            ></textarea>
+                        </div>
+
+
+                        <button type="submit" class="btn form-button">
+                            Enviar mensaje →
+                        </button>
+
+                        <p class="form-disclaimer">
+                            Este formulario es una demostración y todavía
+                            no envía mensajes a un servidor.
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LOCATION BANNER -->
+        <section class="location-banner">
+
+            <div class="container location-banner-content">
+
+                <div>
+                    <span>ENCUÉNTRANOS</span>
+
+                    <h2>Descubre nuestra localización</h2>
+
+                    <p>
+                        Consulta nuestra página de ubicación
+                        para obtener más información.
+                    </p>
+                </div>
+
+                <a href="/localizacion" class="btn btn-light">
+                    Ver localización →
+                </a>
+
+            </div>
+
+        </section>
+
     </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-about">
+
+                <a href="/" class="logo footer-logo">
+                    <span class="logo-icon">&lt;/&gt;</span>
+                    <span>Web<span class="logo-highlight">Academy</span></span>
+                </a>
+
+                <p>
+                    Learn. Create. Grow.
+                    Construye tus habilidades y crea tu futuro digital.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+                <h3>Navegación</h3>
+                <a href="/">Inicio</a>
+                <a href="/#about">Nosotros</a>
+                <a href="/#courses">Cursos</a>
+                <a href="/contacto">Contacto</a>
+            </div>
+
+
+            <div class="footer-links">
+                <h3>Información</h3>
+                <a href="/#services">Servicios</a>
+                <a href="/localizacion">Localización</a>
+            </div>
+
+
+            <div class="footer-links">
+                <h3>Contacto</h3>
+                <p>¿Quieres aprender desarrollo web?</p>
+                <a href="mailto:info@example.com">
+                    Escríbenos →
+                </a>
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+            <p>© 2026 Web Development Academy. Todos los derechos reservados.</p>
+            <a href="/">Learn. Create. Grow.</a>
+        </div>
+
+    </footer>
+
 </body>
 </html>
