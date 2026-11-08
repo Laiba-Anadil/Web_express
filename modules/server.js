@@ -1,47 +1,70 @@
+
 const express = require("express");
 const path = require("path");
+const rutasBuscar = require("../routes/route.buscar");
+const rutaAuth = require("../routes/route.auth");
+const { dbConnection } = require("../db/config.db");
 
 class Server {
-  constructor() {
-    this.app = express();
-    this.PORT = process.env.PORT || 3000;
-    this.middleware();
-    this.routes();
-  }
+    constructor() {
+        this.app = express();
+        this.PORT = process.env.PORT || 3000;
 
-  middleware() {
-    // Middleware para servir archivos estáticos desde la carpeta "public"
-    this.app.use(express.static("public"));
-  }
+        this.middleware();
+        this.routes();
+    }
 
-  routes() {
-    // Ruta para la página principal
-    this.app.get("/", (req, res) => {
-      res.sendFile(path.resolve('public/index.html'));
-    });
+    middleware() {
+        this.app.use(express.json());
+        this.app.use(express.static("public"));
+    }
 
-    // Ruta para la página de contacto
-    this.app.get("/contacto", (req, res) => {
-      res.sendFile(path.resolve('public/contacto.html'));
-    });
+    routes() {
 
-    // Ruta para la página de localización
-    this.app.get("/localizacion", (req, res) => {
-      res.sendFile(path.resolve('public/localizacion.html'));
-    });
+        this.app.use("/api/auth", rutaAuth);
 
-    // Ruta para la página 404
-    this.app.use((req, res) => {
-      res.status(404).sendFile(path.resolve('public/404.html'));
-    });
-  }
+        this.app.use(
+            "/api/buscar",
+            rutasBuscar
+        );
 
-  listen() {
-    this.app.listen(this.PORT, () => {
-      console.log(`Servidor escuchando en http://localhost:${this.PORT}`);
-    }); 
-  }  
+        this.app.use(
+            "/api/usuarios",
+            require("../routes/route.usuario")
+        );
 
+        this.app.get("/", (req, res) => {
+            res.sendFile(path.resolve("public/index.html"));
+        });
+
+        this.app.get("/contacto", (req, res) => {
+            res.sendFile(path.resolve("public/contacto.html"));
+        });
+
+        this.app.get("/localizacion", (req, res) => {
+            res.sendFile(path.resolve("public/localizacion.html"));
+        });
+
+        this.app.use((req, res) => {
+            res.status(404).sendFile(path.resolve("public/404.html"));
+        });
+    }
+
+    async listen() {
+        try {
+            await dbConnection();
+
+            this.app.listen(this.PORT, () => {
+                console.log(
+                    `Servidor escuchando en http://localhost:${this.PORT}`
+                );
+            });
+
+        } catch (error) {
+            console.error("Error al iniciar el servidor:", error);
+            process.exit(1);
+        }
+    }
 }
 
 module.exports = Server;
